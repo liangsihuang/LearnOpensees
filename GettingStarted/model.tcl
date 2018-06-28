@@ -13,3 +13,17 @@ element elasticBeamColumn 2 2 4 3600 4227 1080000 1
 element elasticBeamColumn 3 3 4 5760 4227 4423680 1
 recorder Node -file Node3.out -time -node 3 -dof 1 2 disp
 recorder Element -file Element1.out -time -ele 1 force
+pattern Plain 1 Linear {
+    load 3 0 -2000 -168074
+    load 4 0 -2000 168074
+}
+constraints Transformation
+numberer RCM
+system BandGeneral
+test NormDispIncr 1.0e-6 6
+algorithm Newton
+integrator LoadControl 0.1
+analysis Static
+
+analyze 10
+loadConst -time 0.0
