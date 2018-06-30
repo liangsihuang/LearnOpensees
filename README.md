@@ -72,7 +72,9 @@ proc Porcedure {a b c} {
 ```tcl
 Procedure a b c
 ```
+### 模拟引用
 * `upvar`是用来干吗的？？？
+* 上升命名空间？模拟传地址
 ### 读写文件
 * 读文件 
     * `open`, `read`, `split`, `close`, `llength`
