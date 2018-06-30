@@ -1,6 +1,6 @@
 # Opensees
 ## tcl 
-面向过程，没有`类`！没有`函数`？
+面向过程，没有`类`！没有`函数`？但是有`过程`
 ### Variable
 * 不需要提前声明类型
 * 赋值`set`
@@ -59,5 +59,45 @@ while {$a<4} {
 ```tcl
 source abc.tcl
 ```
+### 过程
+```tcl
+proc Porcedure {a b c} {
+    ...
+    return ...
+}
+```
+* 传入参数用`空格`隔开
+* 可以return吗？
+* 调用
+```tcl
+Procedure a b c
+```
+* `upvar`是用来干吗的？？？
+### 读写文件
+* 读文件 
+    * `open`, `read`, `split`, `close`, `llength`
+```tcl
+set filename a.txt
+set inFileID [open $filename r]
+set alltext [read $inFileID] 
+foreach line [split $alltext \n] {
+    if {[llength $line] == 0} {
+        continue
+    }
+    foreach word [split $line]
+    ...
+}
+close $inFileID
+```
+* 写文件
+    * `open`, `puts`
+```tcl
+set filename a.txt
+set outFileID [open $filename w]
+puts $outFileID $line
+close $outFileID
+```
+
+
 
 
