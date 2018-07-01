@@ -1,2 +1,0 @@
-wipe
-source model.tcl
